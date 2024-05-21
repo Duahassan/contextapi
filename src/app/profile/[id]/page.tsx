@@ -1,10 +1,13 @@
 "use client"
-import { useParams } from "next/navigation"
+import { useParams, useRouter } from "next/navigation";
 
-export default function Profile(){
+export default function ProfileId(){
     const params=useParams();
-    console.log(params.id)
+    const router=useRouter();
+   
     return(
-        <div>My Id profile page. </div>
+        <div><h1>My  profile page Id {params.id}</h1> 
+        <div onClick={()=> router.push("/profile")}>back to profile page</div>
+        </div>
     )
 }
